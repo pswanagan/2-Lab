@@ -38,11 +38,11 @@ const plants2weeks = initialPlants * 2;
 const plants3weeks = plants2weeks * 2;
 // 
 if ( initialPlants > pruned ){
-    console.log(`The plants should be pruned.`);
+    console.log(`Week One: The plants should be pruned.`);
 }else if (initialPlants < pruned && initialPlants > monitored){
-    console.log(`The plants should be monitored.`);
+    console.log(`Week One: The plants should be monitored.`);
 }else {
-    console.log(`There is room to plant more plants`);
+    console.log(`Week One: There is room to plant more plants`);
 }
 
 if ( plants2weeks > pruned ){
