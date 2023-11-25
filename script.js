@@ -82,11 +82,18 @@ console.log(`The radius of the expanded garden is ${finalSpace}m. `)
 Use try and catch to wrap your work in an error-handling block. If the amount of space required to hold the originally provided number of plants exceeds the amount of space available, throw a new error and log an appropriate message.
  */
 
+const errorPlants = 100 * 0.8;
 try {
-	if (x < 0) {
-		console.log("Negative!");
+	if (errorPlants < area) {
+		if ( initialPlants > pruned ){
+            console.log(`Week One: The plants should be pruned.`);
+        }else if (initialPlants < pruned && initialPlants > monitored){
+            console.log(`Week One: The plants should be monitored.`);
+        }else {
+            console.log(`Week One: There is room to plant more plants`);
+        }
 	} else {
-		throw "Error - I don't know what I'm doing.";
+		throw "Error - You planted too many plants at once.";
 	}
 } catch (error) {
 	console.log(error);
