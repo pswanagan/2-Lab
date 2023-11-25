@@ -36,7 +36,7 @@ const monitored = maxPlants * 0.5;
 
 const plants2weeks = initialPlants * 2;
 const plants3weeks = plants2weeks * 2;
-// 
+// Week One Logic
 if ( initialPlants > pruned ){
     console.log(`Week One: The plants should be pruned.`);
 }else if (initialPlants < pruned && initialPlants > monitored){
@@ -45,20 +45,22 @@ if ( initialPlants > pruned ){
     console.log(`Week One: There is room to plant more plants`);
 }
 
+// Week Two Logic
 if ( plants2weeks > pruned ){
-    console.log(`The plants should be pruned.`);
+    console.log(`Week Two: The plants should be pruned.`);
 }else if ((plants2weeks < pruned) && (plants2weeks > monitored)){
-    console.log(`The plants should be monitored.`);
+    console.log(`Week Two: The plants should be monitored.`);
 }else {
-    console.log(`There is room to plant more plants`);
+    console.log(`Week Two: There is room to plant more plants`);
 }
 
+// Week Three Logic
 if ( plants3weeks > pruned ){
-    console.log(`The plants should be pruned.`);
+    console.log(`Week Three: The plants should be pruned.`);
 }else if ((plants3weeks < pruned) && (plants3weeks > monitored)){
-    console.log(`The plants should be monitored.`);
+    console.log(`Week Three: The plants should be monitored.`);
 }else {
-    console.log(`There is room to plant more plants`);
+    console.log(`Week Three: There is room to plant more plants`);
 }
 
 /**
@@ -69,7 +71,9 @@ Using the logic you have already created, determine:
 The amount of additional space that would be required if the scientists were to start with 100 plants, and did not prune them for 10 weeks.
 If the space remained circular, what would be the radius of this expanded garden?
  */
-
+ const increasedSpace = (100 * 0.8) * (2 ** 10)/PI;
+ const finalSpace = Math.sqrt(increasedSpace);
+console.log(`The radius of the expanded garden is ${finalSpace}m. `)
 
 /**
  * Part 3: Errors in Judgement
@@ -77,3 +81,13 @@ If the space remained circular, what would be the radius of this expanded garden
  * The scientists decided not to listen to your recommendations, and have instead started with 100 plants in the original 5-meter-radius garden.
 Use try and catch to wrap your work in an error-handling block. If the amount of space required to hold the originally provided number of plants exceeds the amount of space available, throw a new error and log an appropriate message.
  */
+
+try {
+	if (x < 0) {
+		console.log("Negative!");
+	} else {
+		throw "Error - I don't know what I'm doing.";
+	}
+} catch (error) {
+	console.log(error);
+}
