@@ -24,8 +24,42 @@ Planted, if there is room to plant more plants.
 This condition should be met if the plant count after the given number of weeks is less than 50% of the maximum capacity of the garden.
 Within your submission, include the results for 1, 2, and 3 weeks of growth as inputs.
   */
+const radius = 5;
+const PI = 3.1415;
+const area = PI * radius * radius;
 
+const initialPlants = 20 * 0.8;
+const maxPlants = area / 0.8;
 
+const pruned = maxPlants * 0.8;
+const monitored = maxPlants * 0.5;
+
+const plants2weeks = initialPlants * 2;
+const plants3weeks = plants2weeks * 2;
+// 
+if ( initialPlants > pruned ){
+    console.log(`The plants should be pruned.`);
+}else if (initialPlants < pruned && initialPlants > monitored){
+    console.log(`The plants should be monitored.`);
+}else {
+    console.log(`There is room to plant more plants`);
+}
+
+if ( plants2weeks > pruned ){
+    console.log(`The plants should be pruned.`);
+}else if ((plants2weeks < pruned) && (plants2weeks > monitored)){
+    console.log(`The plants should be monitored.`);
+}else {
+    console.log(`There is room to plant more plants`);
+}
+
+if ( plants3weeks > pruned ){
+    console.log(`The plants should be pruned.`);
+}else if ((plants3weeks < pruned) && (plants3weeks > monitored)){
+    console.log(`The plants should be monitored.`);
+}else {
+    console.log(`There is room to plant more plants`);
+}
 
 /**
  * Part 2: Thinking bigger
